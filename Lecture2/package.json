@@ -1,0 +1,20 @@
+{
+  "name": "lecture2",
+  "version": "1.0.0",
+  "description": "This is class 2 learning Express in Deatils ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "express",
+    "node",
+    "javascript"
+  ],
+  "author": "Chandan",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10"
+  }
+}
