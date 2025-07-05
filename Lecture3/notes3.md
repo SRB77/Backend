@@ -1,10 +1,10 @@
 ## Postman and Nodemon : 
 - These are tools which help us to manage and test our backend Server and api . 
-- [!IMPORTANT] if there is any change after the server started then server can't replicate it , without refreshing it , so for this we use **nodemon** package which restart/refresh the server everytime any change happen
-- [!IMPORTANT] Post man is a very powerfull Client tool which help us to Test our API , Server just works like a client and we don't need actual frontend for Backend development . 
+> [!IMPORTANT] if there is any change after the server started then server can't replicate it , without refreshing it , so for this we use **nodemon** package which restart/refresh the server everytime any change happen
+> [!IMPORTANT] Post man is a very powerfull Client tool which help us to Test our API , Server just works like a client and we don't need actual frontend for Backend development . 
 
 ## How nodemon Internally Works : 
-- [!CAUTION] https://www.perplexity.ai/search/what-is-middleware-in-node-js-nPklHrrfT8uHRbdK.hHppw?0=d&2=d#2
+> [!CAUTION] https://www.perplexity.ai/search/what-is-middleware-in-node-js-nPklHrrfT8uHRbdK.hHppw?0=d&2=d#2
 - **This Link is a thread of Proplexity , where i got a beautiful response about Internals of Nodemon .** 
 
 ## What is API (specific REST): 
