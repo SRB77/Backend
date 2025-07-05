@@ -92,3 +92,9 @@ app.listen(3000);
 - **DELETE**: Used to **remove** a resource (e.g., `DELETE /users/1`)
 
 ---
+
+### 📌 PROJECT DETAILS : 
+> **it's a backend API application built using Node js , Express , REST, HTTP methods ,where we can get all the notes can Delete random /specific Notes add some notes and also modify if we want .**
+
+> [!NOTE]
+> just go through The app.js file to understand how the API's are working 
