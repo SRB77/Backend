@@ -30,3 +30,22 @@ Node.js is ideal for building highly scalable applications that handle many conc
 
 ## 💽 Difference between Package and Module ? 
 ---
+
+
+---
+## WHAT IS A SERVER 
+--- 
+
+🚀 **A server is a computer or a program that provides a service to another computer program and its user, also known as the client. Its primary job is to listen for requests from a client, process that request, and send a response back. For a backend developer, a server is the foundation of an application that handles things like storing data, running business logic, and authenticating users.___✅(Server is a program , which have certain rules or Task to do )**
+
+## 💯 How to built an SERVER with HTTP module . 
+
+```javascript 
+const HTTP = require('http');
+const Server = HTTP.createServer(); //> Yahan pe Server create ho gaya but abtak chalu nahi hua . 
+Server.listen(3000,()=>{
+    console.log(`Server is running on localhost:3000`);
+})
+//> Ab server Listen kar sakta hai client ka request but kuchh response nahi dega because not programmed for it yet . 
+//> To start the server we just have to run `node index.js` in the terminal inside class1 directory . 
+```
