@@ -49,3 +49,30 @@ Server.listen(3000,()=>{
 //> Ab server Listen kar sakta hai client ka request but kuchh response nahi dega because not programmed for it yet . 
 //> To start the server we just have to run `node index.js` in the terminal inside class1 directory . 
 ```
+--- 
+```javascript 
+const HTTP = require('http');
+const Server = HTTP.createServer((req,res)=>{
+    console.log(req.url);
+    if(req.method === "GET" && req.url === '/'){
+        res.end("Welcome to HTTP server homepage");
+    }
+    else if(req.method === "GET" && req.url === '/about'){
+        res.end('Hey it"s about The Server of HTTP and routs');
+    }
+    else{
+        res.end(`404 NOT FOUND `);
+    }
+    // res.end(`Hello world `); //> Try to uncomment and see What's happening 
+}); 
+Server.listen(3000,()=>{
+    console.log(`Server is running on localhost:3000`);
+})
+```
+
+> **So basically with the help of `HTTP` we can do whatever we want exactly like shown above but everything would be `manual` and `so messy` like above we can create `any route` any response everything within the `HTTP`**
+
+> **`Express` simply uses `HTTP apis` under the hood and provide us better `syntax` and more `automated tools` for better experience** 
+--- 
+
+**END HERE**

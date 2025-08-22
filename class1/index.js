@@ -6,7 +6,19 @@
 //* Creating a Server using HTTP module
 
 const HTTP = require('http');
-const Server = HTTP.createServer(); //> Yahan pe Server create ho gaya but abtak chalu nahi hua . 
+const Server = HTTP.createServer((req,res)=>{
+    console.log(req.url);
+    if(req.method === "GET" && req.url === '/'){
+        res.end("Welcome to HTTP server homepage");
+    }
+    else if(req.method === "GET" && req.url === '/about'){
+        res.end('Hey it"s about The Server of HTTP and routs');
+    }
+    else{
+        res.end(`404 NOT FOUND `);
+    }
+    // res.end(`Hello world `);
+}); //> Yahan pe Server create ho gaya but abtak chalu nahi hua . 
 Server.listen(3000,()=>{
     console.log(`Server is running on localhost:3000`);
 })
