@@ -30,7 +30,13 @@ Node.js is ideal for building highly scalable applications that handle many conc
 
 ## 💽 Difference between Package and Module ? 
 ---
+`A module is a single file of code.` It's the smallest, most fundamental unit of code organization. You write a module to group related functions, variables, or classes into one file.
 
+`A package is a folder` that contains `one or more modules` and a special file called `package.json`. It's a way to bundle and share a collection of related modules, often with a specific purpose.
+
+Now, let's look at your examples. The `http module` is a built-in Node.js module because it is a single file of core functionality that comes with `Node.js` itself. You don't have to download it; it's always there.
+
+On the other hand, `cat-me` is a `package`. It's a bundle of files—at least a `package.json` file and probably one or more .js files (the modules). You have to download it from a central registry, like npm, to use it in your project.
 
 ---
 ## WHAT IS A SERVER 
