@@ -1,0 +1,2 @@
+{"Title":"First_Note","Desc":"This note contains The first ever note of the application"}
+{"Title":"Second_Note","Desc":"This note contains The Second  note of the application"}
