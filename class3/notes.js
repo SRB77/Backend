@@ -44,20 +44,22 @@ Notes.get("/allNotes", (req, res) => {
 });
 
 Notes.patch("/EditNotes", (req, res) => {
-  const {Title,Desc} = req.body;
+  const { Title, Desc } = req.body;
   async function editNotes() {
     try {
-      const allNotes = await fs.readFile('Notes.txt','utf-8');
-      const noteStrings = allNotes.trim().split('\n');
-      const noteObjArr = noteStrings.map(obj=> JSON.parse(obj));
-      const newNoteObjArr = noteObjArr.map((notes) =>{
-        if(notes.Title === Title){
-          return {"Title":Title , "Desc":Desc}
-        }else return notes;
-      })
-      const realUpdatedData = newNoteObjArr.map(note => JSON.stringify(note)).join("\n");
+      const allNotes = await fs.readFile("Notes.txt", "utf-8");
+      const noteStrings = allNotes.trim().split("\n");
+      const noteObjArr = noteStrings.map((obj) => JSON.parse(obj));
+      const newNoteObjArr = noteObjArr.map((notes) => {
+        if (notes.Title === Title) {
+          return { Title: Title, Desc: Desc };
+        } else return notes;
+      });
+      const realUpdatedData = newNoteObjArr
+        .map((note) => JSON.stringify(note))
+        .join("\n");
 
-      await fs.writeFile("Notes.txt",realUpdatedData + "\n");
+      await fs.writeFile("Notes.txt", realUpdatedData + "\n");
       res.status(200).send(`Note ${Title} was updated successfully`);
     } catch (err) {
       res.status(404).send(`An error occured : ${err}`);
@@ -66,58 +68,24 @@ Notes.patch("/EditNotes", (req, res) => {
   editNotes();
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Notes.delete("/Delete/:index", (req, res) => {
+  const index = req.params.index;
+  //Index ke basis pe delete hoga !
+  async function delteresponse() {
+    try {
+      const rawData = await fs.readFile("Notes.txt", "utf-8");
+      const notes = rawData.trim().split("\n");
+      const arrNotes = notes.map((note) => JSON.parse(note));
+      arrNotes.splice(index, 1);
+      const reWrite = arrNotes.map((note) => JSON.stringify(note)).join("\n");
+      fs.writeFile("Notes.txt", reWrite + "\n");
+      res.status(202).send(`note Deleted Successfuuly `);
+    } catch (err) {
+      res.status(403).send(`The error is : ${err}`);
+    }
+  }
+  delteresponse();
+});
 
 Notes.listen(PORT, () => {
   console.log(`Notes Server is running on ${PORT}`);
