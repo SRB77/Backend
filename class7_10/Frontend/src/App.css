@@ -1,0 +1,37 @@
+.app-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: 'Helvetica', Arial, sans-serif;
+    background-color: #ffffff;
+}
+
+.Navbar{
+    width: 100%;
+    padding: 1rem 2rem;
+    background-color: #f8f8f8;
+    color: #333;
+    border-bottom: 1px solid #eaeaea;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.nav-content {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-content i {
+    font-size: 1.5rem;
+    color: #6c63ff;
+}
+
+.main-content {
+    padding: 1rem;
+}
+
+.section-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
