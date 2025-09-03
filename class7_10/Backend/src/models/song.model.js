@@ -4,6 +4,7 @@ const songSchema = new mongoose.Schema({
     name:String,
     artist:String,
     audio:String,
+    mood:String,
 })
 
 const song = mongoose.model('song',songSchema);

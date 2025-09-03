@@ -1,4 +1,3 @@
-
 var ImageKit = require("imagekit");
 
 var imagekit = new ImageKit({
@@ -11,7 +10,8 @@ function uploadFileToImagekit(file){
     return new Promise((res,rej)=>{
         imagekit.upload({
             file:file.buffer,
-            fileName:"bollywood_cohort"
+            fileName:`${Date.now()}`,
+            folder:"cohort-moody-player"
         },(error,result)=>{
             if(error){
                 rej(error);
