@@ -1,8 +1,10 @@
 import './App.css'
+import { useState } from 'react';
 import Songs from './Components/Songs'
 import FacialExpression from './Components/FacialExpression'
 
 function App() {
+  const [songs, setSongs] = useState([]);
   return (
     <div className="app-container">
       <nav className='Navbar'>
@@ -12,8 +14,8 @@ function App() {
         </div>
       </nav>
       <main className="main-content">
-        <FacialExpression/>
-        <Songs/>
+        <FacialExpression setSongs={setSongs} />
+        <Songs songs={songs}/>
       </main>
     </div>
   )

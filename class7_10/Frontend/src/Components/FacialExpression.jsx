@@ -2,8 +2,9 @@
 import { useEffect, useRef, useState } from "react";
 import * as faceapi from "face-api.js";
 import "./FacialExpression.css";
+import axios from "axios";
 
-export default function FacialExpression() {
+export default function FacialExpression({setSongs}) {
   const videoRef = useRef(null);
   const [mood, setMood] = useState("Detecting...");
   const [showMood, setShowMood] = useState(false);
@@ -42,15 +43,21 @@ export default function FacialExpression() {
         const mood = Object.keys(expressions).reduce((a, b) =>
           expressions[a] > expressions[b] ? a : b
         );
-        setMood(mood);
+         setMood(mood);
+         return mood;
       } else {
         setMood("No face detected");
+        return "No face detected"
       }
     }
   };
   const handleDetectMood = async () => {
-    await detect();
+    const currentMood = await detect();
     setShowMood(true);
+    console.log(currentMood);
+    const res = await axios.get(`http://localhost:3008/moodSongs?mood=${currentMood}`);
+    console.log(res.data);
+    setSongs(res.data.songs);  //! More work is going to be done here   
   };
 
   return (
