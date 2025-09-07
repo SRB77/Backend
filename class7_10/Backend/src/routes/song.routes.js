@@ -8,8 +8,8 @@ const upload = multer({storage:multer.memoryStorage()});
 
 
 router.post('/songs',upload.single("audio"),async (req,res)=>{
-    console.log(req.body);
-    console.log(req.file);
+    // console.log(req.body);
+    // console.log(req.file);
     const audioFile = await uploadFileToImagekit(req.file);
 
     const song = await songmodel.create({

@@ -24,6 +24,7 @@
 
 .song-item:hover {
     background-color: #f8f8f8;
+    cursor: pointer;
 }
 
 .song-info {
@@ -45,23 +46,19 @@
     margin: 0;
 }
 
-.play-button {
-    width: 2.5rem;
-    height: 2.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background-color: #f0f0f0;
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
-
-.play-button:hover {
-    background-color: #e0e0e0;
-}
-
-.play-button i {
+.play-pause-button i {
     font-size: 1.25rem;
     color: #6c63ff;
+}
+
+.play-pause{
+        width: 2.5rem;
+        height: 2.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background-color: #f0f0f0;
+        cursor: pointer;
+        transition: background-color 0.2s;
 }
