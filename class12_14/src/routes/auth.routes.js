@@ -8,7 +8,7 @@ const router = express.Router();
 router.post("/register", async (req, res) => {
   const { username, password } = req.body;
   const user = await userModel.create({ username, password });
-  res.status(201).json({ message: "User registerd Successfully", user });
+  return res.status(201).json({ message: "User registerd Successfully", user });
 });
 
 
@@ -20,7 +20,7 @@ router.post("/login", async (req, res) => {
     username: username,
   });
   if (!existedUser) {
-    res.status(401).json({
+    return res.status(401).json({
       message: "No user Found",
     });
   }
